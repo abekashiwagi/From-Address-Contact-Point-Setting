@@ -1,13 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: Arial, Helvetica, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,14 +45,29 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --color-entrata-dark: #333333;
-  --color-entrata-header: #444444;
-  --color-entrata-blue: #3b82f6;
-  --color-entrata-green: #6aab35;
-  --color-entrata-selected: #d4e8fc;
-  --color-entrata-border: #dddddd;
-  --color-entrata-light-bg: #f5f5f5;
-  --color-entrata-tab-active: #2c6fb7;
+
+  /* Exact colors sampled from the original screenshot */
+  --color-e-header: #383838;
+  --color-e-logo: #adadad;
+  --color-e-nav-bg: #ebebeb;
+  --color-e-nav-tab: #e8e8e8;
+  --color-e-nav-tab-active: #fdfdfd;
+  --color-e-subnav-bg: #ffffff;
+  --color-e-subnav-border: #ececec;
+  --color-e-toggle-bar: #7a7a7a;
+  --color-e-toggle-active: #383838;
+  --color-e-toggle-inactive: #868686;
+  --color-e-selected-bg: #dfedfa;
+  --color-e-selected-text: #4a6d8c;
+  --color-e-sidebar-bg: #fdfdfd;
+  --color-e-sidebar-border: #e8e8e8;
+  --color-e-content-bg: #ffffff;
+  --color-e-card-bg: #f5f5f5;
+  --color-e-card-border: #e3e3e3;
+  --color-e-text: #383838;
+  --color-e-text-muted: #7a7a7a;
+  --color-e-text-light: #adadad;
+  --color-e-info-border: #c4ccd7;
 }
 
 :root {
@@ -75,20 +89,7 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 @layer base {
@@ -98,12 +99,15 @@
   body {
     @apply bg-background text-foreground;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 13px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #383838;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   html {
-    @apply font-sans;
+    font-family: Arial, Helvetica, sans-serif;
   }
 }

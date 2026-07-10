@@ -5,7 +5,7 @@ const subTabs = [
   "Contact Points",
   "From Addresses",
   "Notification Recipients",
-  "Call Handling",
+  "Call-handling",
   "System Documents",
 ];
 
@@ -16,17 +16,27 @@ interface SecondaryNavProps {
 
 export function SecondaryNav({ activeSubTab, onSubTabChange }: SecondaryNavProps) {
   return (
-    <nav className="flex items-center gap-0 bg-white border-b border-entrata-border px-4 h-[32px]">
+    <nav
+      className="flex items-center px-2 h-[28px]"
+      style={{
+        background: "#ffffff",
+        borderBottom: "1px solid #ececec",
+        fontFamily: "Arial, Helvetica, sans-serif",
+      }}
+    >
       {subTabs.map((tab) => (
         <button
           key={tab}
           onClick={() => onSubTabChange(tab)}
           className={cn(
-            "px-3 py-1.5 text-[12px] transition-colors cursor-pointer border-b-2",
-            activeSubTab === tab
-              ? "text-entrata-dark font-semibold border-entrata-tab-active"
-              : "text-gray-500 font-medium border-transparent hover:text-gray-700 hover:border-gray-300"
+            "px-[10px] py-[3px] text-[11px] cursor-pointer h-full flex items-center",
           )}
+          style={{
+            fontFamily: "Arial, Helvetica, sans-serif",
+            color: activeSubTab === tab ? "#383838" : "#7a7a7a",
+            fontWeight: activeSubTab === tab ? 700 : 400,
+            borderBottom: activeSubTab === tab ? "2px solid #5a8abf" : "2px solid transparent",
+          }}
         >
           {tab}
         </button>
