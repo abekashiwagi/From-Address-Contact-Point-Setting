@@ -6,20 +6,30 @@ interface HeaderBarProps {
 
 export function HeaderBar({ propertyName }: HeaderBarProps) {
   return (
-    <header className="flex items-center justify-between bg-entrata-dark h-[36px] px-3 text-white text-[13px]">
-      <div className="flex items-center gap-2">
-        <span className="font-semibold text-entrata-green tracking-wide text-[14px] italic">
+    <header
+      className="flex items-center justify-between h-[32px] px-3 text-white text-[12px]"
+      style={{ background: "#383838", fontFamily: "Arial, Helvetica, sans-serif" }}
+    >
+      <div className="flex items-center gap-1.5">
+        <span
+          className="tracking-wide text-[13px]"
+          style={{
+            color: "#adadad",
+            fontStyle: "italic",
+            fontWeight: 700,
+          }}
+        >
           entrata
         </span>
-        <ChevronRight className="w-3 h-3 text-gray-400" />
-        <span className="text-white font-medium">{propertyName}</span>
+        <ChevronRight className="w-3 h-3 mx-0.5" style={{ color: "#888888" }} strokeWidth={1.5} />
+        <span className="font-bold text-[12px]" style={{ color: "#ffffff" }}>{propertyName}</span>
       </div>
-      <div className="flex items-center gap-3">
-        <Search className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white transition-colors" />
-        <Bell className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white transition-colors" />
-        <div className="flex items-center gap-1.5 cursor-pointer hover:text-gray-200 transition-colors">
-          <X className="w-4 h-4" />
-          <span>Close</span>
+      <div className="flex items-center gap-4">
+        <Search className="w-[14px] h-[14px] cursor-pointer" style={{ color: "#cccccc" }} strokeWidth={2} />
+        <Bell className="w-[14px] h-[14px] cursor-pointer" style={{ color: "#cccccc" }} strokeWidth={2} />
+        <div className="flex items-center gap-1 cursor-pointer">
+          <X className="w-[14px] h-[14px]" style={{ color: "#ffffff" }} strokeWidth={2} />
+          <span style={{ color: "#ffffff" }}>Close</span>
         </div>
       </div>
     </header>
